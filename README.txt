@@ -4,7 +4,6 @@ the SnowballStemmer from the NTLK.
 
 Given a new post in the form a string, get_related(post) will
 predict which cluster post belongs to and then fetch three
-<<<<<<< HEAD
 posts from said cluster with various similarities.  
 
 The mlcomp data needs to be downloaded, and then put in a directory
