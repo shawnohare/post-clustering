@@ -18,7 +18,7 @@ def main():
     full_set =  sklearn.datasets.load_mlcomp("20news-18828", mlcomp_root=MLCOMP_DIR)
     train_set = sklearn.datasets.load_mlcomp("20news-18828", "train", mlcomp_root=MLCOMP_DIR)
     test_set =  sklearn.datasets.load_mlcomp("20news-18828", "test", mlcomp_root=MLCOMP_DIR)
-    # vectorize the data using StemmedTfidVectorizer
+    # vectorize the data using StemmedTfidfVectorizer
     vect_train_data = vectorizer.fit_transform(train_set.data)
     vect_test_data = vectorizer.transform(test_set.data)
     vect_full_set = vectorizer.transform(full_set.data)
@@ -63,7 +63,7 @@ class StemmedTfidfVectorizer(TfidfVectorizer):
         analyzer = super(StemmedTfidfVectorizer,self).build_analyzer()
         eng_stem = nltk.stem.SnowballStemmer('english')
         return lambda doc: (eng_stem.stem(w) for w in analyzer(doc))
-<<<<<<< HEAD
+
 
 main()
 
